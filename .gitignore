@@ -1,0 +1,22 @@
+# Model Checkpoints (超过 100MB)
+experiments/checkpoints/scibert/model.safetensors
+experiments/checkpoints/cross_encoder/model.safetensors
+experiments/checkpoints/specter2/model.safetensors
+
+# Large Data Files (超过 100MB)
+data/processed/test.json
+data/processed/train.json
+data/processed/val.json
+data/processed/backup_original/test.json
+data/processed/backup_original/train.json
+data/processed/backup_original/val.json
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+*.swp
