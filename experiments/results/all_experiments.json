@@ -1,0 +1,5490 @@
+[
+  {
+    "experiment_id": "bm25_baseline_20251130_101830",
+    "experiment_name": "BM25 Baseline",
+    "model_type": "bm25",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T10:18:30.157392",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2416237541891009,
+      "recall@5": 0.3283898305084746,
+      "recall@10": 0.4173728813559322,
+      "recall@20": 0.5148305084745762,
+      "recall@50": 0.5148305084745762,
+      "precision@10": 0.04173728813559322,
+      "precision@20": 0.02574152542372881,
+      "ndcg@10": 0.278065433668327,
+      "ndcg@20": 0.302878224322126
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Traditional BM25 sparse retrieval baseline"
+  },
+  {
+    "experiment_id": "bm25_baseline_20251130_102403",
+    "experiment_name": "BM25 Baseline",
+    "model_type": "bm25",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T10:24:03.811466",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2416237541891009,
+      "recall@5": 0.3283898305084746,
+      "recall@10": 0.4173728813559322,
+      "recall@20": 0.5148305084745762,
+      "recall@50": 0.5148305084745762,
+      "precision@10": 0.04173728813559322,
+      "precision@20": 0.02574152542372881,
+      "ndcg@10": 0.278065433668327,
+      "ndcg@20": 0.302878224322126
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Traditional BM25 sparse retrieval baseline"
+  },
+  {
+    "experiment_id": "tfidf_baseline_20251130_102405",
+    "experiment_name": "TF-IDF Baseline",
+    "model_type": "tfidf",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T10:24:05.888559",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2570312966289511,
+      "recall@5": 0.3389830508474576,
+      "recall@10": 0.461864406779661,
+      "recall@20": 0.5932203389830508,
+      "recall@50": 0.5932203389830508,
+      "precision@10": 0.046186440677966095,
+      "precision@20": 0.029661016949152543,
+      "ndcg@10": 0.29832828537802053,
+      "ndcg@20": 0.33136966695436915
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "TF-IDF sparse retrieval baseline"
+  },
+  {
+    "experiment_id": "bm25_baseline_20251130_102456",
+    "experiment_name": "BM25 Baseline",
+    "model_type": "bm25",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T10:24:56.483246",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2416237541891009,
+      "recall@5": 0.3283898305084746,
+      "recall@10": 0.4173728813559322,
+      "recall@20": 0.5148305084745762,
+      "recall@50": 0.5148305084745762,
+      "precision@10": 0.04173728813559322,
+      "precision@20": 0.02574152542372881,
+      "ndcg@10": 0.278065433668327,
+      "ndcg@20": 0.302878224322126
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Traditional BM25 sparse retrieval baseline"
+  },
+  {
+    "experiment_id": "bm25_baseline_20251130_102511",
+    "experiment_name": "BM25 Baseline",
+    "model_type": "bm25",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T10:25:11.292282",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2416237541891009,
+      "recall@5": 0.3283898305084746,
+      "recall@10": 0.4173728813559322,
+      "recall@20": 0.5148305084745762,
+      "recall@50": 0.5148305084745762,
+      "precision@10": 0.04173728813559322,
+      "precision@20": 0.02574152542372881,
+      "ndcg@10": 0.278065433668327,
+      "ndcg@20": 0.302878224322126
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Traditional BM25 sparse retrieval baseline"
+  },
+  {
+    "experiment_id": "tfidf_baseline_20251130_102513",
+    "experiment_name": "TF-IDF Baseline",
+    "model_type": "tfidf",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T10:25:13.368418",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2570312966289511,
+      "recall@5": 0.3389830508474576,
+      "recall@10": 0.461864406779661,
+      "recall@20": 0.5932203389830508,
+      "recall@50": 0.5932203389830508,
+      "precision@10": 0.046186440677966095,
+      "precision@20": 0.029661016949152543,
+      "ndcg@10": 0.29832828537802053,
+      "ndcg@20": 0.33136966695436915
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "TF-IDF sparse retrieval baseline"
+  },
+  {
+    "experiment_id": "prf_baseline_20251130_102536",
+    "experiment_name": "Query Expansion + BM25",
+    "model_type": "prf",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T10:25:36.116065",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": true,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.24989379080780863,
+      "recall@5": 0.326271186440678,
+      "recall@10": 0.4194915254237288,
+      "recall@20": 0.538135593220339,
+      "recall@50": 0.538135593220339,
+      "precision@10": 0.04194915254237287,
+      "precision@20": 0.026906779661016948,
+      "ndcg@10": 0.28376347819411346,
+      "ndcg@20": 0.31368714209668125
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pseudo-relevance feedback with BM25"
+  },
+  {
+    "experiment_id": "specter2_zero-shot_20251130_103309",
+    "experiment_name": "SPECTER2 Zero-shot",
+    "model_type": "specter2",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T10:33:09.695924",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.28010258381422853,
+      "recall@5": 0.375,
+      "recall@10": 0.4872881355932203,
+      "recall@20": 0.5677966101694916,
+      "recall@50": 0.5677966101694916,
+      "precision@10": 0.048728813559322036,
+      "precision@20": 0.028389830508474573,
+      "ndcg@10": 0.32458187316810916,
+      "ndcg@20": 0.3449386667448846
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SPECTER2 dense retrieval zero-shot"
+  },
+  {
+    "experiment_id": "colbert_zero-shot_20251130_103309",
+    "experiment_name": "ColBERT Zero-shot",
+    "model_type": "colbert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T10:33:09.829899",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": true,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "ColBERT late interaction zero-shot"
+  },
+  {
+    "experiment_id": "cross_encoder_zero-shot_20251130_103313",
+    "experiment_name": "Cross-Encoder Zero-shot",
+    "model_type": "cross_encoder",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T10:33:13.767525",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Cross-Encoder reranker zero-shot (MS-MARCO)"
+  },
+  {
+    "experiment_id": "rrf_zero-shot_20251130_115646",
+    "experiment_name": "RRF (Zero-shot)",
+    "model_type": "rrf",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T11:56:46.889753",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Reciprocal Rank Fusion with zero-shot models"
+  },
+  {
+    "experiment_id": "rrf_fine-tuned_20251130_115647",
+    "experiment_name": "RRF (Fine-tuned)",
+    "model_type": "rrf",
+    "variant": "fine-tuned",
+    "timestamp": "2025-11-30T11:56:47.014384",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Reciprocal Rank Fusion with fine-tuned models"
+  },
+  {
+    "experiment_id": "l2r_zero-shot_20251130_131917",
+    "experiment_name": "LightGBM L2R (Zero-shot)",
+    "model_type": "l2r",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T13:19:17.340808",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with zero-shot features"
+  },
+  {
+    "experiment_id": "l2r_zero-shot_20251130_132050",
+    "experiment_name": "LightGBM L2R (Zero-shot)",
+    "model_type": "l2r",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T13:20:50.938703",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with zero-shot features"
+  },
+  {
+    "experiment_id": "scibert_zero-shot_20251130_132231",
+    "experiment_name": "SciBERT Zero-shot",
+    "model_type": "scibert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T13:22:31.225011",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SciBERT bi-encoder zero-shot"
+  },
+  {
+    "experiment_id": "scibert_zero-shot_20251130_132319",
+    "experiment_name": "SciBERT Zero-shot",
+    "model_type": "scibert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T13:23:19.838560",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SciBERT bi-encoder zero-shot"
+  },
+  {
+    "experiment_id": "specter2_zero-shot_20251130_132331",
+    "experiment_name": "SPECTER2 Zero-shot",
+    "model_type": "specter2",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T13:23:31.768465",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.28010258381422853,
+      "recall@5": 0.375,
+      "recall@10": 0.4872881355932203,
+      "recall@20": 0.5677966101694916,
+      "recall@50": 0.5677966101694916,
+      "precision@10": 0.048728813559322036,
+      "precision@20": 0.028389830508474573,
+      "ndcg@10": 0.32458187316810916,
+      "ndcg@20": 0.3449386667448846
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SPECTER2 dense retrieval zero-shot"
+  },
+  {
+    "experiment_id": "colbert_zero-shot_20251130_132331",
+    "experiment_name": "ColBERT Zero-shot",
+    "model_type": "colbert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T13:23:31.905400",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": true,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "ColBERT late interaction zero-shot"
+  },
+  {
+    "experiment_id": "cross_encoder_zero-shot_20251130_132335",
+    "experiment_name": "Cross-Encoder Zero-shot",
+    "model_type": "cross_encoder",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T13:23:35.275625",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Cross-Encoder reranker zero-shot (MS-MARCO)"
+  },
+  {
+    "experiment_id": "rrf_zero-shot_20251130_132346",
+    "experiment_name": "RRF (Zero-shot)",
+    "model_type": "rrf",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T13:23:46.129388",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Reciprocal Rank Fusion with zero-shot models"
+  },
+  {
+    "experiment_id": "rrf_fine-tuned_20251130_132346",
+    "experiment_name": "RRF (Fine-tuned)",
+    "model_type": "rrf",
+    "variant": "fine-tuned",
+    "timestamp": "2025-11-30T13:23:46.258432",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Reciprocal Rank Fusion with fine-tuned models"
+  },
+  {
+    "experiment_id": "l2r_zero-shot_20251130_132346",
+    "experiment_name": "LightGBM L2R (Zero-shot)",
+    "model_type": "l2r",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T13:23:46.396403",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with zero-shot features"
+  },
+  {
+    "experiment_id": "l2r_fine-tuned_20251130_134849",
+    "experiment_name": "LightGBM L2R (Fine-tuned)",
+    "model_type": "l2r",
+    "variant": "fine-tuned",
+    "timestamp": "2025-11-30T13:48:49.196201",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with fine-tuned features"
+  },
+  {
+    "experiment_id": "scibert_fine-tuned_20251130_135155",
+    "experiment_name": "SciBERT Fine-tuned",
+    "model_type": "scibert",
+    "variant": "fine-tuned",
+    "timestamp": "2025-11-30T13:51:55.191539",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": true,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+    "notes": "SciBERT bi-encoder fine-tuned on citation data"
+  },
+  {
+    "experiment_id": "pipeline_basic_20251130_135202",
+    "experiment_name": "Multi-Stage Pipeline (Basic)",
+    "model_type": "pipeline",
+    "variant": "basic",
+    "timestamp": "2025-11-30T13:52:02.336101",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Basic multi-stage pipeline"
+  },
+  {
+    "experiment_id": "scibert_zero-shot_20251130_140318",
+    "experiment_name": "SciBERT Zero-shot",
+    "model_type": "scibert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:03:18.595910",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SciBERT bi-encoder zero-shot"
+  },
+  {
+    "experiment_id": "specter2_zero-shot_20251130_140328",
+    "experiment_name": "SPECTER2 Zero-shot",
+    "model_type": "specter2",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:03:28.968835",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.28010258381422853,
+      "recall@5": 0.375,
+      "recall@10": 0.4872881355932203,
+      "recall@20": 0.5677966101694916,
+      "recall@50": 0.5677966101694916,
+      "precision@10": 0.048728813559322036,
+      "precision@20": 0.028389830508474573,
+      "ndcg@10": 0.32458187316810916,
+      "ndcg@20": 0.3449386667448846
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SPECTER2 dense retrieval zero-shot"
+  },
+  {
+    "experiment_id": "colbert_zero-shot_20251130_140329",
+    "experiment_name": "ColBERT Zero-shot",
+    "model_type": "colbert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:03:29.107786",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": true,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "ColBERT late interaction zero-shot"
+  },
+  {
+    "experiment_id": "cross_encoder_zero-shot_20251130_140332",
+    "experiment_name": "Cross-Encoder Zero-shot",
+    "model_type": "cross_encoder",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:03:32.403327",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Cross-Encoder reranker zero-shot (MS-MARCO)"
+  },
+  {
+    "experiment_id": "rrf_zero-shot_20251130_140332",
+    "experiment_name": "RRF (Zero-shot)",
+    "model_type": "rrf",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:03:32.582345",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Reciprocal Rank Fusion with zero-shot models"
+  },
+  {
+    "experiment_id": "l2r_zero-shot_20251130_140332",
+    "experiment_name": "LightGBM L2R (Zero-shot)",
+    "model_type": "l2r",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:03:32.739025",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with zero-shot features"
+  },
+  {
+    "experiment_id": "scibert_fine-tuned_20251130_140513",
+    "experiment_name": "SciBERT Fine-tuned",
+    "model_type": "scibert",
+    "variant": "fine-tuned",
+    "timestamp": "2025-11-30T14:05:13.112155",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": true,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+    "notes": "SciBERT bi-encoder fine-tuned on citation data"
+  },
+  {
+    "experiment_id": "scibert_zero-shot_20251130_140741",
+    "experiment_name": "SciBERT Zero-shot",
+    "model_type": "scibert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:07:41.318587",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SciBERT bi-encoder zero-shot"
+  },
+  {
+    "experiment_id": "scibert_zero-shot_20251130_140836",
+    "experiment_name": "SciBERT Zero-shot",
+    "model_type": "scibert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:08:36.347123",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SciBERT bi-encoder zero-shot"
+  },
+  {
+    "experiment_id": "scibert_zero-shot_20251130_141523",
+    "experiment_name": "SciBERT Zero-shot",
+    "model_type": "scibert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:15:23.290752",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.14451281579231612,
+      "recall@5": 0.2076271186440678,
+      "recall@10": 0.2690677966101695,
+      "recall@20": 0.4110169491525424,
+      "recall@50": 0.4110169491525424,
+      "precision@10": 0.026906779661016948,
+      "precision@20": 0.020550847457627117,
+      "ndcg@10": 0.16666902320645086,
+      "ndcg@20": 0.2020671228042399
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SciBERT bi-encoder zero-shot"
+  },
+  {
+    "experiment_id": "rrf_zero-shot_20251130_141805",
+    "experiment_name": "RRF (Zero-shot)",
+    "model_type": "rrf",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:18:05.115607",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.23485782976898448,
+      "recall@5": 0.3241525423728814,
+      "recall@10": 0.4004237288135593,
+      "recall@20": 0.6059322033898306,
+      "recall@50": 0.6059322033898306,
+      "precision@10": 0.04004237288135593,
+      "precision@20": 0.030296610169491523,
+      "ndcg@10": 0.2629927507712884,
+      "ndcg@20": 0.3154294056871471
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Reciprocal Rank Fusion with zero-shot models"
+  },
+  {
+    "experiment_id": "l2r_zero-shot_20251130_142116",
+    "experiment_name": "LightGBM L2R (Zero-shot)",
+    "model_type": "l2r",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:21:16.072832",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2687559178859948,
+      "recall@5": 0.3644067796610169,
+      "recall@10": 0.4724576271186441,
+      "recall@20": 0.5614406779661016,
+      "recall@50": 0.5614406779661016,
+      "precision@10": 0.0472457627118644,
+      "precision@20": 0.02807203389830508,
+      "ndcg@10": 0.3123327660789958,
+      "ndcg@20": 0.3348066471027646
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with zero-shot features"
+  },
+  {
+    "experiment_id": "scibert_zero-shot_20251130_142523",
+    "experiment_name": "SciBERT Zero-shot",
+    "model_type": "scibert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:25:23.910493",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.14451281579231612,
+      "recall@5": 0.2076271186440678,
+      "recall@10": 0.2690677966101695,
+      "recall@20": 0.4110169491525424,
+      "recall@50": 0.4110169491525424,
+      "precision@10": 0.026906779661016948,
+      "precision@20": 0.020550847457627117,
+      "ndcg@10": 0.16666902320645086,
+      "ndcg@20": 0.2020671228042399
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SciBERT bi-encoder zero-shot"
+  },
+  {
+    "experiment_id": "specter2_zero-shot_20251130_142534",
+    "experiment_name": "SPECTER2 Zero-shot",
+    "model_type": "specter2",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:25:34.698135",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.28010258381422853,
+      "recall@5": 0.375,
+      "recall@10": 0.4872881355932203,
+      "recall@20": 0.5677966101694916,
+      "recall@50": 0.5677966101694916,
+      "precision@10": 0.048728813559322036,
+      "precision@20": 0.028389830508474573,
+      "ndcg@10": 0.32458187316810916,
+      "ndcg@20": 0.3449386667448846
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SPECTER2 dense retrieval zero-shot"
+  },
+  {
+    "experiment_id": "colbert_zero-shot_20251130_142548",
+    "experiment_name": "ColBERT Zero-shot",
+    "model_type": "colbert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:25:48.855635",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": true,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2416237541891009,
+      "recall@5": 0.3283898305084746,
+      "recall@10": 0.4173728813559322,
+      "recall@20": 0.5148305084745762,
+      "recall@50": 0.5148305084745762,
+      "precision@10": 0.04173728813559322,
+      "precision@20": 0.02574152542372881,
+      "ndcg@10": 0.278065433668327,
+      "ndcg@20": 0.302878224322126
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "ColBERT late interaction zero-shot"
+  },
+  {
+    "experiment_id": "cross_encoder_zero-shot_20251130_142705",
+    "experiment_name": "Cross-Encoder Zero-shot",
+    "model_type": "cross_encoder",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:27:05.327048",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2410053847667815,
+      "recall@5": 0.3283898305084746,
+      "recall@10": 0.4194915254237288,
+      "recall@20": 0.527542372881356,
+      "recall@50": 0.527542372881356,
+      "precision@10": 0.041949152542372886,
+      "precision@20": 0.026377118644067794,
+      "ndcg@10": 0.2770355195535233,
+      "ndcg@20": 0.30487225734046813
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Cross-Encoder reranker zero-shot (MS-MARCO)"
+  },
+  {
+    "experiment_id": "rrf_zero-shot_20251130_142719",
+    "experiment_name": "RRF (Zero-shot)",
+    "model_type": "rrf",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:27:19.303896",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.23485782976898448,
+      "recall@5": 0.3241525423728814,
+      "recall@10": 0.4004237288135593,
+      "recall@20": 0.6059322033898306,
+      "recall@50": 0.6059322033898306,
+      "precision@10": 0.04004237288135593,
+      "precision@20": 0.030296610169491523,
+      "ndcg@10": 0.2629927507712884,
+      "ndcg@20": 0.3154294056871471
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Reciprocal Rank Fusion with zero-shot models"
+  },
+  {
+    "experiment_id": "l2r_zero-shot_20251130_143020",
+    "experiment_name": "LightGBM L2R (Zero-shot)",
+    "model_type": "l2r",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:30:20.810684",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2687559178859948,
+      "recall@5": 0.3644067796610169,
+      "recall@10": 0.4724576271186441,
+      "recall@20": 0.5614406779661016,
+      "recall@50": 0.5614406779661016,
+      "precision@10": 0.0472457627118644,
+      "precision@20": 0.02807203389830508,
+      "ndcg@10": 0.3123327660789958,
+      "ndcg@20": 0.3348066471027646
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with zero-shot features"
+  },
+  {
+    "experiment_id": "bm25_baseline_20251130_145436",
+    "experiment_name": "BM25 Baseline",
+    "model_type": "bm25",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T14:54:36.778577",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2416237541891009,
+      "recall@5": 0.3283898305084746,
+      "recall@10": 0.4173728813559322,
+      "recall@20": 0.5148305084745762,
+      "recall@50": 0.5148305084745762,
+      "precision@10": 0.04173728813559322,
+      "precision@20": 0.02574152542372881,
+      "ndcg@10": 0.278065433668327,
+      "ndcg@20": 0.302878224322126
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Traditional BM25 sparse retrieval baseline"
+  },
+  {
+    "experiment_id": "tfidf_baseline_20251130_145438",
+    "experiment_name": "TF-IDF Baseline",
+    "model_type": "tfidf",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T14:54:38.934546",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2570312966289511,
+      "recall@5": 0.3389830508474576,
+      "recall@10": 0.461864406779661,
+      "recall@20": 0.5932203389830508,
+      "recall@50": 0.5932203389830508,
+      "precision@10": 0.046186440677966095,
+      "precision@20": 0.029661016949152543,
+      "ndcg@10": 0.29832828537802053,
+      "ndcg@20": 0.33136966695436915
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "TF-IDF sparse retrieval baseline"
+  },
+  {
+    "experiment_id": "prf_baseline_20251130_145502",
+    "experiment_name": "Query Expansion + BM25",
+    "model_type": "prf",
+    "variant": "baseline",
+    "timestamp": "2025-11-30T14:55:02.273677",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": true,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.24989379080780863,
+      "recall@5": 0.326271186440678,
+      "recall@10": 0.4194915254237288,
+      "recall@20": 0.538135593220339,
+      "recall@50": 0.538135593220339,
+      "precision@10": 0.04194915254237287,
+      "precision@20": 0.026906779661016948,
+      "ndcg@10": 0.28376347819411346,
+      "ndcg@20": 0.31368714209668125
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pseudo-relevance feedback with BM25"
+  },
+  {
+    "experiment_id": "scibert_zero-shot_20251130_145905",
+    "experiment_name": "SciBERT Zero-shot",
+    "model_type": "scibert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:59:05.623830",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.14444219432338956,
+      "recall@5": 0.2055084745762712,
+      "recall@10": 0.2690677966101695,
+      "recall@20": 0.4110169491525424,
+      "recall@50": 0.4110169491525424,
+      "precision@10": 0.026906779661016948,
+      "precision@20": 0.020550847457627117,
+      "ndcg@10": 0.16660409604516582,
+      "ndcg@20": 0.20200219564295488
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SciBERT bi-encoder zero-shot"
+  },
+  {
+    "experiment_id": "specter2_zero-shot_20251130_145917",
+    "experiment_name": "SPECTER2 Zero-shot",
+    "model_type": "specter2",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:59:17.730908",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2821674404518799,
+      "recall@5": 0.3771186440677966,
+      "recall@10": 0.4915254237288136,
+      "recall@20": 0.5911016949152542,
+      "recall@50": 0.5911016949152542,
+      "precision@10": 0.049152542372881344,
+      "precision@20": 0.02955508474576271,
+      "ndcg@10": 0.3260033026294037,
+      "ndcg@20": 0.35133858265887197
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "SPECTER2 dense retrieval zero-shot"
+  },
+  {
+    "experiment_id": "colbert_zero-shot_20251130_145931",
+    "experiment_name": "ColBERT Zero-shot",
+    "model_type": "colbert",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T14:59:31.377255",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": true,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2416237541891009,
+      "recall@5": 0.3283898305084746,
+      "recall@10": 0.4173728813559322,
+      "recall@20": 0.5148305084745762,
+      "recall@50": 0.5148305084745762,
+      "precision@10": 0.04173728813559322,
+      "precision@20": 0.02574152542372881,
+      "ndcg@10": 0.278065433668327,
+      "ndcg@20": 0.302878224322126
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "ColBERT late interaction zero-shot"
+  },
+  {
+    "experiment_id": "cross_encoder_zero-shot_20251130_150047",
+    "experiment_name": "Cross-Encoder Zero-shot",
+    "model_type": "cross_encoder",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T15:00:47.612253",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2410053847667815,
+      "recall@5": 0.3283898305084746,
+      "recall@10": 0.4194915254237288,
+      "recall@20": 0.527542372881356,
+      "recall@50": 0.527542372881356,
+      "precision@10": 0.041949152542372886,
+      "precision@20": 0.026377118644067794,
+      "ndcg@10": 0.2770355195535233,
+      "ndcg@20": 0.30487225734046813
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Cross-Encoder reranker zero-shot (MS-MARCO)"
+  },
+  {
+    "experiment_id": "scibert_fine-tuned_20251130_150446",
+    "experiment_name": "SciBERT Fine-tuned",
+    "model_type": "scibert",
+    "variant": "fine-tuned",
+    "timestamp": "2025-11-30T15:04:46.864611",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": true,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.3186680899473443,
+      "recall@5": 0.4152542372881356,
+      "recall@10": 0.5063559322033898,
+      "recall@20": 0.5911016949152542,
+      "recall@50": 0.5911016949152542,
+      "precision@10": 0.05063559322033898,
+      "precision@20": 0.02955508474576271,
+      "ndcg@10": 0.35884296132993015,
+      "ndcg@20": 0.380013314444195
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+    "notes": "SciBERT bi-encoder fine-tuned on citation data"
+  },
+  {
+    "experiment_id": "rrf_zero-shot_20251130_151123",
+    "experiment_name": "RRF (Zero-shot)",
+    "model_type": "rrf",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T15:11:23.372502",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.21111885318246496,
+      "recall@5": 0.3072033898305085,
+      "recall@10": 0.3961864406779661,
+      "recall@20": 0.586864406779661,
+      "recall@50": 0.586864406779661,
+      "precision@10": 0.03961864406779661,
+      "precision@20": 0.029343220338983046,
+      "ndcg@10": 0.24591986284516437,
+      "ndcg@20": 0.2925004847572415
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Reciprocal Rank Fusion with zero-shot models"
+  },
+  {
+    "experiment_id": "rrf_fine-tuned_20251130_151137",
+    "experiment_name": "RRF (Fine-tuned)",
+    "model_type": "rrf",
+    "variant": "fine-tuned",
+    "timestamp": "2025-11-30T15:11:37.094871",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.21111885318246496,
+      "recall@5": 0.3072033898305085,
+      "recall@10": 0.3961864406779661,
+      "recall@20": 0.586864406779661,
+      "recall@50": 0.586864406779661,
+      "precision@10": 0.03961864406779661,
+      "precision@20": 0.029343220338983046,
+      "ndcg@10": 0.24591986284516437,
+      "ndcg@20": 0.2925004847572415
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Reciprocal Rank Fusion with fine-tuned models"
+  },
+  {
+    "experiment_id": "l2r_zero-shot_20251130_151451",
+    "experiment_name": "LightGBM L2R (Zero-shot)",
+    "model_type": "l2r",
+    "variant": "zero-shot",
+    "timestamp": "2025-11-30T15:14:51.478365",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2687559178859948,
+      "recall@5": 0.3644067796610169,
+      "recall@10": 0.4724576271186441,
+      "recall@20": 0.5614406779661016,
+      "recall@50": 0.5614406779661016,
+      "precision@10": 0.0472457627118644,
+      "precision@20": 0.02807203389830508,
+      "ndcg@10": 0.3123327660789958,
+      "ndcg@20": 0.3348066471027646
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/zs/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with zero-shot features"
+  },
+  {
+    "experiment_id": "l2r_fine-tuned_20251130_151801",
+    "experiment_name": "LightGBM L2R (Fine-tuned)",
+    "model_type": "l2r",
+    "variant": "fine-tuned",
+    "timestamp": "2025-11-30T15:18:01.614611",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2687559178859948,
+      "recall@5": 0.3644067796610169,
+      "recall@10": 0.4724576271186441,
+      "recall@20": 0.5614406779661016,
+      "recall@50": 0.5614406779661016,
+      "precision@10": 0.0472457627118644,
+      "precision@20": 0.02807203389830508,
+      "ndcg@10": 0.3123327660789958,
+      "ndcg@20": 0.3348066471027646
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with fine-tuned features"
+  },
+  {
+    "experiment_id": "pipeline_basic_20251130_151801",
+    "experiment_name": "Multi-Stage Pipeline (Basic)",
+    "model_type": "pipeline",
+    "variant": "basic",
+    "timestamp": "2025-11-30T15:18:01.773913",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Basic multi-stage pipeline"
+  },
+  {
+    "experiment_id": "cross_encoder_fine-tuned_20251201_055348",
+    "experiment_name": "Cross-Encoder Fine-tuned",
+    "model_type": "cross_encoder",
+    "variant": "fine-tuned",
+    "timestamp": "2025-12-01T05:53:48.530801",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "/hy-tmp/final_test/experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": true,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.31175381483921333,
+      "recall@5": 0.4194915254237288,
+      "recall@10": 0.5148305084745762,
+      "recall@20": 0.5783898305084746,
+      "recall@50": 0.5783898305084746,
+      "precision@10": 0.05148305084745762,
+      "precision@20": 0.028919491525423727,
+      "ndcg@10": 0.35657019292854863,
+      "ndcg@20": 0.37277002145811916
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/cross_encoder",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/cross_encoder",
+    "notes": "Cross-Encoder reranker fine-tuned"
+  },
+  {
+    "experiment_id": "pipeline_optimized_20251201_061722",
+    "experiment_name": "Multi-Stage Pipeline (Optimized)",
+    "model_type": "pipeline",
+    "variant": "optimized",
+    "timestamp": "2025-12-01T06:17:22.355179",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.29218527184874854,
+      "recall@5": 0.3855932203389831,
+      "recall@10": 0.5148305084745762,
+      "recall@20": 0.5995762711864406,
+      "recall@50": 0.5995762711864406,
+      "precision@10": 0.05148305084745762,
+      "precision@20": 0.02997881355932203,
+      "ndcg@10": 0.3399129632597014,
+      "ndcg@20": 0.36172161530169145
+    },
+    "training_info": {
+      "status": "not_required"
+    },
+    "model_path": null,
+    "notes": "Optimized multi-stage pipeline with fine-tuned models"
+  },
+  {
+    "experiment_id": "pipeline_basic_20251201_061921",
+    "experiment_name": "Multi-Stage Pipeline (Basic)",
+    "model_type": "pipeline",
+    "variant": "basic",
+    "timestamp": "2025-12-01T06:19:21.595288",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2692737021764741,
+      "recall@5": 0.3601694915254237,
+      "recall@10": 0.4915254237288136,
+      "recall@20": 0.6483050847457628,
+      "recall@50": 0.6483050847457628,
+      "precision@10": 0.04915254237288135,
+      "precision@20": 0.03241525423728813,
+      "ndcg@10": 0.31298515726672427,
+      "ndcg@20": 0.35265071484025984
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Basic multi-stage pipeline"
+  },
+  {
+    "experiment_id": "specter2_fine-tuned_20251201_065154",
+    "experiment_name": "SPECTER2 Fine-tuned",
+    "model_type": "specter2",
+    "variant": "fine-tuned",
+    "timestamp": "2025-12-01T06:51:54.391381",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "fine_tuned_path": "/hy-tmp/final_test/experiments/checkpoints/specter2",
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": false,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": true
+      }
+    },
+    "metrics": {
+      "mrr": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "recall@20": 0.0,
+      "recall@50": 0.0,
+      "precision@10": 0.0,
+      "precision@20": 0.0,
+      "ndcg@10": 0.0,
+      "ndcg@20": 0.0
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/specter2",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/specter2",
+    "notes": "SPECTER2 dense retrieval fine-tuned"
+  },
+  {
+    "experiment_id": "specter2_fine-tuned_20251201_074240",
+    "experiment_name": "SPECTER2 Fine-tuned",
+    "model_type": "specter2",
+    "variant": "fine-tuned",
+    "timestamp": "2025-12-01T07:42:40.151739",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "fine_tuned_path": "/hy-tmp/final_test/experiments/checkpoints/specter2",
+          "model_name": "allenai/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": false,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": false
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": false,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": null,
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": false
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": true
+      }
+    },
+    "metrics": {
+      "mrr": 0.31732887858819275,
+      "recall@5": 0.4258474576271186,
+      "recall@10": 0.5211864406779662,
+      "recall@20": 0.6101694915254238,
+      "recall@50": 0.6101694915254238,
+      "precision@10": 0.05211864406779661,
+      "precision@20": 0.030508474576271184,
+      "ndcg@10": 0.360937254300469,
+      "ndcg@20": 0.38375607362509706
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/specter2",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/specter2",
+    "notes": "SPECTER2 dense retrieval fine-tuned"
+  },
+  {
+    "experiment_id": "l2r_fine-tuned_20251201_080214",
+    "experiment_name": "LightGBM L2R (Fine-tuned)",
+    "model_type": "l2r",
+    "variant": "fine-tuned",
+    "timestamp": "2025-12-01T08:02:14.588571",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": false
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": false,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": true,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.29218527184874854,
+      "recall@5": 0.3855932203389831,
+      "recall@10": 0.5148305084745762,
+      "recall@20": 0.5995762711864406,
+      "recall@50": 0.5995762711864406,
+      "precision@10": 0.05148305084745762,
+      "precision@20": 0.02997881355932203,
+      "ndcg@10": 0.3399129632597014,
+      "ndcg@20": 0.36172161530169145
+    },
+    "training_info": {
+      "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt",
+      "status": "completed"
+    },
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/l2r/ft/l2r_model.txt",
+    "notes": "LightGBM Learning-to-Rank with fine-tuned features"
+  },
+  {
+    "experiment_id": "pipeline_optimized_20251201_080642",
+    "experiment_name": "Multi-Stage Pipeline (Optimized)",
+    "model_type": "pipeline",
+    "variant": "optimized",
+    "timestamp": "2025-12-01T08:06:42.118989",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.3427813345032903,
+      "recall@5": 0.451271186440678,
+      "recall@10": 0.5995762711864406,
+      "recall@20": 0.7033898305084746,
+      "recall@50": 0.7033898305084746,
+      "precision@10": 0.05995762711864406,
+      "precision@20": 0.03516949152542372,
+      "ndcg@10": 0.39774968935773947,
+      "ndcg@20": 0.42407814303629987
+    },
+    "training_info": {
+      "status": "not_required"
+    },
+    "model_path": null,
+    "notes": "Optimized multi-stage pipeline with fine-tuned models"
+  },
+  {
+    "experiment_id": "pipeline_query_enhanced_20251201_082149",
+    "experiment_name": "Query Enhancement (Exp 6.1)",
+    "model_type": "pipeline",
+    "variant": "query_enhanced",
+    "timestamp": "2025-12-01T08:21:49.447340",
+    "config": {
+      "query_enhancement": {
+        "enabled": true,
+        "max_abstract_length": 200
+      },
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.34135825116255536,
+      "recall@5": 0.451271186440678,
+      "recall@10": 0.5953389830508474,
+      "recall@20": 0.7033898305084746,
+      "recall@50": 0.7033898305084746,
+      "precision@10": 0.059533898305084744,
+      "precision@20": 0.03516949152542372,
+      "ndcg@10": 0.3954316501058621,
+      "ndcg@20": 0.42291740457852517
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pipeline with query enhancement (citation_context + source_paper_title + abstract)"
+  },
+  {
+    "experiment_id": "pipeline_context_before_20251201_084719",
+    "experiment_name": "Context Enhancement - Before (Exp 6.1b.1)",
+    "model_type": "pipeline",
+    "variant": "context_before",
+    "timestamp": "2025-12-01T08:47:19.884158",
+    "config": {
+      "query_enhancement": {
+        "context_mode": "before",
+        "use_source_paper": false
+      },
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.3427813345032903,
+      "recall@5": 0.451271186440678,
+      "recall@10": 0.5995762711864406,
+      "recall@20": 0.7033898305084746,
+      "recall@50": 0.7033898305084746,
+      "precision@10": 0.05995762711864406,
+      "precision@20": 0.03516949152542372,
+      "ndcg@10": 0.39774968935773947,
+      "ndcg@20": 0.42407814303629987
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pipeline with context_before + citation_context"
+  },
+  {
+    "experiment_id": "pipeline_context_after_20251201_085108",
+    "experiment_name": "Context Enhancement - After (Exp 6.1b.2)",
+    "model_type": "pipeline",
+    "variant": "context_after",
+    "timestamp": "2025-12-01T08:51:08.104845",
+    "config": {
+      "query_enhancement": {
+        "context_mode": "after",
+        "use_source_paper": false
+      },
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.3427813345032903,
+      "recall@5": 0.451271186440678,
+      "recall@10": 0.5995762711864406,
+      "recall@20": 0.7033898305084746,
+      "recall@50": 0.7033898305084746,
+      "precision@10": 0.05995762711864406,
+      "precision@20": 0.03516949152542372,
+      "ndcg@10": 0.39774968935773947,
+      "ndcg@20": 0.42407814303629987
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pipeline with citation_context + context_after"
+  },
+  {
+    "experiment_id": "pipeline_context_both_20251201_085658",
+    "experiment_name": "Context Enhancement - Both (Exp 6.1b.3)",
+    "model_type": "pipeline",
+    "variant": "context_both",
+    "timestamp": "2025-12-01T08:56:58.196731",
+    "config": {
+      "query_enhancement": {
+        "context_mode": "both",
+        "use_source_paper": false
+      },
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.3427813345032903,
+      "recall@5": 0.451271186440678,
+      "recall@10": 0.5995762711864406,
+      "recall@20": 0.7033898305084746,
+      "recall@50": 0.7033898305084746,
+      "precision@10": 0.05995762711864406,
+      "precision@20": 0.03516949152542372,
+      "ndcg@10": 0.39774968935773947,
+      "ndcg@20": 0.42407814303629987
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pipeline with context_before + citation_context + context_after"
+  },
+  {
+    "experiment_id": "pipeline_context_before_20251201_095431",
+    "experiment_name": "Context Enhancement - Before (Exp 6.1b.1)",
+    "model_type": "pipeline",
+    "variant": "context_before",
+    "timestamp": "2025-12-01T09:54:31.036886",
+    "config": {
+      "query_enhancement": {
+        "context_mode": "before",
+        "use_source_paper": false
+      },
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.2701676096333817,
+      "recall@5": 0.3935381355932203,
+      "recall@10": 0.4878177966101695,
+      "recall@20": 0.6064618644067796,
+      "recall@50": 0.6064618644067796,
+      "precision@10": 0.04878177966101695,
+      "precision@20": 0.03032309322033898,
+      "ndcg@10": 0.3155982129624881,
+      "ndcg@20": 0.34576420466993535
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pipeline with context_before + citation_context"
+  },
+  {
+    "experiment_id": "pipeline_context_before_20251201_111427",
+    "experiment_name": "Context Enhancement - Before (Exp 6.1b.1)",
+    "model_type": "pipeline",
+    "variant": "context_before",
+    "timestamp": "2025-12-01T11:14:27.657558",
+    "config": {
+      "query_enhancement": {
+        "context_mode": "before",
+        "use_source_paper": false
+      },
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.1861147743141769,
+      "recall@5": 0.2584745762711864,
+      "recall@10": 0.3252118644067797,
+      "recall@20": 0.4030720338983051,
+      "recall@50": 0.4030720338983051,
+      "precision@10": 0.03252118644067797,
+      "precision@20": 0.020153601694915254,
+      "ndcg@10": 0.21508118859688385,
+      "ndcg@20": 0.23472680878437777
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pipeline with context_before + citation_context"
+  },
+  {
+    "experiment_id": "pipeline_context_before_20251201_125136",
+    "experiment_name": "Context Enhancement - Before (Exp 6.1b.1)",
+    "model_type": "pipeline",
+    "variant": "context_before",
+    "timestamp": "2025-12-01T12:51:36.327877",
+    "config": {
+      "query_enhancement": {
+        "context_mode": "before",
+        "use_source_paper": false
+      },
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.20287845544854125,
+      "recall@5": 0.2711864406779661,
+      "recall@10": 0.3432203389830508,
+      "recall@20": 0.4110169491525424,
+      "recall@50": 0.4110169491525424,
+      "precision@10": 0.03432203389830509,
+      "precision@20": 0.020550847457627117,
+      "ndcg@10": 0.2323934407761621,
+      "ndcg@20": 0.24953917917550308
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pipeline with context_before + citation_context"
+  },
+  {
+    "experiment_id": "pipeline_context_before_20251201_130935",
+    "experiment_name": "Context Enhancement - Before (Exp 6.1b.1)",
+    "model_type": "pipeline",
+    "variant": "context_before",
+    "timestamp": "2025-12-01T13:09:35.276041",
+    "config": {
+      "query_enhancement": {
+        "context_mode": "before",
+        "use_source_paper": false
+      },
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.17486286033702994,
+      "recall@5": 0.2521186440677966,
+      "recall@10": 0.3241525423728814,
+      "recall@20": 0.3898305084745763,
+      "recall@50": 0.3898305084745763,
+      "precision@10": 0.03241525423728814,
+      "precision@20": 0.01949152542372881,
+      "ndcg@10": 0.2067851358261764,
+      "ndcg@20": 0.22330583031836193
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Pipeline with context_before + citation_context"
+  },
+  {
+    "experiment_id": "pipeline_optimized_20251201_133627",
+    "experiment_name": "Multi-Stage Pipeline (Optimized)",
+    "model_type": "pipeline",
+    "variant": "optimized",
+    "timestamp": "2025-12-01T13:36:27.643450",
+    "config": {
+      "stage1": {
+        "bm25": {
+          "b": 0.75,
+          "k1": 1.5
+        },
+        "specter2": {
+          "faiss_nlist": 100,
+          "faiss_nprobe": 10,
+          "model_name": "allenai/specter2",
+          "fine_tuned_path": "experiments/checkpoints/specter2"
+        },
+        "top_k": 1000,
+        "use_bm25": true,
+        "use_prf": false,
+        "use_specter2": true,
+        "use_tfidf": true
+      },
+      "stage2": {
+        "bi_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/scibert",
+          "model_name": "allenai/scibert_scivocab_uncased"
+        },
+        "rrf": {
+          "k": 60
+        },
+        "top_k": 50,
+        "use_bi_encoder": true,
+        "use_colbert": false,
+        "use_rrf": true
+      },
+      "stage3": {
+        "cross_encoder": {
+          "fine_tuned_path": "experiments/checkpoints/cross_encoder",
+          "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+        },
+        "top_k": 20,
+        "use_cross_encoder": true,
+        "use_l2r": true,
+        "l2r": {
+          "model_path": "experiments/checkpoints/l2r/ft/l2r_model.txt"
+        }
+      },
+      "training": {
+        "scibert": {
+          "batch_size": 16,
+          "early_stopping_patience": 2,
+          "epochs": 3,
+          "learning_rate": "2e-5",
+          "warmup_steps": 100
+        },
+        "train_cross_encoder": false,
+        "train_l2r": false,
+        "train_scibert": false,
+        "train_specter2": false
+      }
+    },
+    "metrics": {
+      "mrr": 0.17486286033702994,
+      "recall@5": 0.2521186440677966,
+      "recall@10": 0.3241525423728814,
+      "recall@20": 0.3898305084745763,
+      "recall@50": 0.3898305084745763,
+      "precision@10": 0.03241525423728814,
+      "precision@20": 0.01949152542372881,
+      "ndcg@10": 0.2067851358261764,
+      "ndcg@20": 0.22330583031836193
+    },
+    "training_info": null,
+    "model_path": null,
+    "notes": "Optimized multi-stage pipeline with fine-tuned models"
+  }
+]

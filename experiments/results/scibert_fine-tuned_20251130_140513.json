@@ -1,0 +1,77 @@
+{
+  "experiment_id": "scibert_fine-tuned_20251130_140513",
+  "experiment_name": "SciBERT Fine-tuned",
+  "model_type": "scibert",
+  "variant": "fine-tuned",
+  "timestamp": "2025-11-30T14:05:13.112155",
+  "config": {
+    "stage1": {
+      "bm25": {
+        "b": 0.75,
+        "k1": 1.5
+      },
+      "specter2": {
+        "faiss_nlist": 100,
+        "faiss_nprobe": 10,
+        "model_name": "allenai/specter2"
+      },
+      "top_k": 1000,
+      "use_bm25": false,
+      "use_prf": false,
+      "use_specter2": false,
+      "use_tfidf": false
+    },
+    "stage2": {
+      "bi_encoder": {
+        "fine_tuned_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+        "model_name": "allenai/scibert_scivocab_uncased"
+      },
+      "rrf": {
+        "k": 60
+      },
+      "top_k": 50,
+      "use_bi_encoder": true,
+      "use_colbert": false,
+      "use_rrf": false
+    },
+    "stage3": {
+      "cross_encoder": {
+        "fine_tuned_path": null,
+        "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+      },
+      "top_k": 20,
+      "use_cross_encoder": false,
+      "use_l2r": false
+    },
+    "training": {
+      "scibert": {
+        "batch_size": 16,
+        "early_stopping_patience": 2,
+        "epochs": 3,
+        "learning_rate": "2e-5",
+        "warmup_steps": 100
+      },
+      "train_cross_encoder": false,
+      "train_l2r": false,
+      "train_scibert": true,
+      "train_specter2": false
+    }
+  },
+  "metrics": {
+    "mrr": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0,
+    "recall@20": 0.0,
+    "recall@50": 0.0,
+    "precision@10": 0.0,
+    "precision@20": 0.0,
+    "ndcg@10": 0.0,
+    "ndcg@20": 0.0
+  },
+  "training_info": {
+    "model_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+    "status": "completed"
+  },
+  "model_path": "/hy-tmp/final_test/experiments/checkpoints/scibert",
+  "notes": "SciBERT bi-encoder fine-tuned on citation data"
+}

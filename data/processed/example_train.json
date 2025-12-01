@@ -1,0 +1,85 @@
+[
+  {
+    "citation_context": "Recent work shows that transformer models have achieved state-of-the-art results in natural language processing tasks",
+    "source_paper_id": "1910.10683",
+    "source_paper": {
+      "id": "1910.10683",
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "abstract": "Transfer learning, where a model is first trained on a data-rich task before being fine-tuned on a downstream task, has emerged as a powerful technique in natural language processing (NLP).",
+      "categories": ["cs.LG", "cs.CL", "stat.ML"],
+      "year": 2019
+    },
+    "target_paper_id": "1706.03762",
+    "target_paper": {
+      "id": "1706.03762",
+      "title": "Attention Is All You Need",
+      "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks that include an encoder and a decoder. The best performing models also connect the encoder and decoder through an attention mechanism.",
+      "categories": ["cs.CL", "cs.LG"],
+      "year": 2017
+    },
+    "negatives": [
+      {
+        "id": "1508.05326",
+        "title": "VQA: Visual Question Answering",
+        "abstract": "We propose the task of free-form and open-ended Visual Question Answering (VQA).",
+        "categories": ["cs.CV", "cs.CL"],
+        "year": 2015
+      },
+      {
+        "id": "1409.1556",
+        "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+        "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting.",
+        "categories": ["cs.CV"],
+        "year": 2014
+      }
+    ],
+    "metadata": {
+      "section": "Introduction",
+      "source_year": 2019,
+      "target_year": 2017,
+      "source_categories": ["cs.LG", "cs.CL", "stat.ML"]
+    }
+  },
+  {
+    "citation_context": "Deep learning models have been successfully applied to computer vision tasks such as image classification and object detection",
+    "source_paper_id": "2003.04930",
+    "source_paper": {
+      "id": "2003.04930",
+      "title": "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks",
+      "abstract": "Convolutional Neural Networks (ConvNets) are commonly developed at a fixed resource budget, and then scaled up for better accuracy if more resources are available.",
+      "categories": ["cs.CV", "cs.LG"],
+      "year": 2020
+    },
+    "target_paper_id": "1409.1556",
+    "target_paper": {
+      "id": "1409.1556",
+      "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+      "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting.",
+      "categories": ["cs.CV"],
+      "year": 2014
+    },
+    "negatives": [
+      {
+        "id": "1706.03762",
+        "title": "Attention Is All You Need",
+        "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks.",
+        "categories": ["cs.CL", "cs.LG"],
+        "year": 2017
+      },
+      {
+        "id": "1310.4546",
+        "title": "Distributed Representations of Words and Phrases and their Compositionality",
+        "abstract": "The recently introduced continuous Skip-gram model is an efficient method for learning high-quality distributed vector representations of words.",
+        "categories": ["cs.CL", "cs.LG"],
+        "year": 2013
+      }
+    ],
+    "metadata": {
+      "section": "Related Work",
+      "source_year": 2020,
+      "target_year": 2014,
+      "source_categories": ["cs.CV", "cs.LG"]
+    }
+  }
+]
+

@@ -1,0 +1,51 @@
+[
+  {
+    "citation_context": "Neural machine translation has shown significant improvements over traditional statistical methods",
+    "source_paper_id": "1409.3215",
+    "source_paper": {
+      "id": "1409.3215",
+      "title": "Sequence to Sequence Learning with Neural Networks",
+      "abstract": "Deep Neural Networks (DNNs) are powerful models that have achieved excellent performance on difficult learning tasks.",
+      "categories": ["cs.CL", "cs.LG", "cs.NE"],
+      "year": 2014
+    },
+    "target_paper_id": "1409.0473",
+    "target_paper": {
+      "id": "1409.0473",
+      "title": "Neural Machine Translation by Jointly Learning to Align and Translate",
+      "abstract": "Neural machine translation is a recently proposed approach to machine translation.",
+      "categories": ["cs.CL", "cs.LG"],
+      "year": 2014
+    },
+    "negatives": [
+      {
+        "id": "1508.05326",
+        "title": "VQA: Visual Question Answering",
+        "abstract": "We propose the task of free-form and open-ended Visual Question Answering (VQA).",
+        "categories": ["cs.CV", "cs.CL"],
+        "year": 2015
+      },
+      {
+        "id": "1409.1556",
+        "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+        "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy.",
+        "categories": ["cs.CV"],
+        "year": 2014
+      },
+      {
+        "id": "1310.4546",
+        "title": "Distributed Representations of Words and Phrases",
+        "abstract": "The recently introduced continuous Skip-gram model is an efficient method.",
+        "categories": ["cs.CL", "cs.LG"],
+        "year": 2013
+      }
+    ],
+    "metadata": {
+      "section": "Introduction",
+      "source_year": 2014,
+      "target_year": 2014,
+      "source_categories": ["cs.CL", "cs.LG", "cs.NE"]
+    }
+  }
+]
+

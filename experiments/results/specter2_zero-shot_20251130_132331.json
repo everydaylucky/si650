@@ -1,0 +1,74 @@
+{
+  "experiment_id": "specter2_zero-shot_20251130_132331",
+  "experiment_name": "SPECTER2 Zero-shot",
+  "model_type": "specter2",
+  "variant": "zero-shot",
+  "timestamp": "2025-11-30T13:23:31.768465",
+  "config": {
+    "stage1": {
+      "bm25": {
+        "b": 0.75,
+        "k1": 1.5
+      },
+      "specter2": {
+        "faiss_nlist": 100,
+        "faiss_nprobe": 10,
+        "model_name": "allenai/specter2"
+      },
+      "top_k": 1000,
+      "use_bm25": false,
+      "use_prf": false,
+      "use_specter2": true,
+      "use_tfidf": false
+    },
+    "stage2": {
+      "bi_encoder": {
+        "fine_tuned_path": null,
+        "model_name": "allenai/scibert_scivocab_uncased"
+      },
+      "rrf": {
+        "k": 60
+      },
+      "top_k": 50,
+      "use_bi_encoder": false,
+      "use_colbert": false,
+      "use_rrf": false
+    },
+    "stage3": {
+      "cross_encoder": {
+        "fine_tuned_path": null,
+        "model_name": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+      },
+      "top_k": 20,
+      "use_cross_encoder": false,
+      "use_l2r": false
+    },
+    "training": {
+      "scibert": {
+        "batch_size": 16,
+        "early_stopping_patience": 2,
+        "epochs": 3,
+        "learning_rate": "2e-5",
+        "warmup_steps": 100
+      },
+      "train_cross_encoder": false,
+      "train_l2r": false,
+      "train_scibert": false,
+      "train_specter2": false
+    }
+  },
+  "metrics": {
+    "mrr": 0.28010258381422853,
+    "recall@5": 0.375,
+    "recall@10": 0.4872881355932203,
+    "recall@20": 0.5677966101694916,
+    "recall@50": 0.5677966101694916,
+    "precision@10": 0.048728813559322036,
+    "precision@20": 0.028389830508474573,
+    "ndcg@10": 0.32458187316810916,
+    "ndcg@20": 0.3449386667448846
+  },
+  "training_info": null,
+  "model_path": null,
+  "notes": "SPECTER2 dense retrieval zero-shot"
+}

@@ -1,0 +1,10 @@
+{
+  "num_samples": 1888,
+  "num_documents": 4504,
+  "source_file": "/Users/Shared/baiduyun/00 Code/SI650/SI-650-proj-old/data/arxiv_corpus/citation_ground_truth_strict.json",
+  "reorganized_date": "1764560026.4869218",
+  "num_sources": 38,
+  "negative_ratio": "1:99",
+  "creation_date": "2024-11-24",
+  "random_seed": 42
+}
